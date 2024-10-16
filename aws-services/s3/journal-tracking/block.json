@@ -1,0 +1,21 @@
+{
+    "Version": "2012-10-17",
+    "Id": "BlockIP22318977130",
+    "Statement": [
+      {
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": [
+          "arn:aws:s3:::s3-tut2-lasya",
+          "arn:aws:s3:::s3-tut2-lasya/*"
+        ],
+        "Condition": {
+          "IpAddress": {
+            "aws:SourceIp": "223.189.77.130"
+          }
+        }
+      }
+    ]
+  }
+  

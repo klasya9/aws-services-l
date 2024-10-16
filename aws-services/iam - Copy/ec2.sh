@@ -1,0 +1,1 @@
+aws ec2 run-instances --image-id ami-0a235a40f3e7f88d1 --count 1 --instance-type t2.micro --key-name shdregf --region ap-south-1

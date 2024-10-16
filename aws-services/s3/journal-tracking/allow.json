@@ -1,0 +1,35 @@
+{
+    "Version": "2012-10-17",
+    "Id": "AllowOnlyIP11023522572",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": [
+          "arn:aws:s3:::bucket-tut3-lasya",
+          "arn:aws:s3:::bucket-tut3-lasya/*"
+        ],
+        "Condition": {
+          "IpAddress": {
+            "aws:SourceIp": "110.235.225.72"
+          }
+        }
+      },
+      {
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "s3:*",
+        "Resource": [
+          "arn:aws:s3:::bucket-tut3-lasya",
+          "arn:aws:s3:::bucket-tut3-lasya/*"
+        ],
+        "Condition": {
+          "NotIpAddress": {
+            "aws:SourceIp": "110.235.225.72"
+          }
+        }
+      }
+    ]
+  }
+  
